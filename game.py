@@ -1,18 +1,14 @@
 #!/usr/bin/python
 
 import pygame, sys
+from colors import *
 #import launcher #create launcher file
 from pygame.locals import *
 
 pygame.init()
 
-# color defs
-DISPLAYSURF=pygame.display.set_mode((500,400),0,32)
-SKY_COLOR=pygame.Color(62,131,247)
-GRASS_GREEN=pygame.Color(48,96,41)
-BLACK=(0,0,0)
-
-ground=pygame.Rect(0,380,500,20) #makes ground
+DISPLAYSURF = pygame.display.set_mode((500,400),0,32) #makes window
+ground      = pygame.Rect(0,380,500,20) #ground obj
 
 def draw_world(surf): #draws everything for scenery
     surf.fill(SKY_COLOR) #fills sky background
@@ -22,10 +18,7 @@ def draw_world(surf): #draws everything for scenery
     textRectObj = textSurfaceObj.get_rect() #text box
     textRectObj.center = (250, 25) #text box center
     
-    
     DISPLAYSURF.blit(textSurfaceObj, textRectObj) #puts text to screen
-    
-    
     
 while True: # main game loop
     draw_world(DISPLAYSURF)
