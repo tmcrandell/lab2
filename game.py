@@ -1,14 +1,15 @@
 #!/usr/bin/python
 
 import pygame, sys
+from launcher import *
 from colors import *
-#import launcher #create launcher file
 from pygame.locals import *
 
 pygame.init()
 
 DISPLAYSURF = pygame.display.set_mode((500,400),0,32) #makes window
 ground      = pygame.Rect(0,380,500,20) #ground obj
+myLauncher  = Launcher(0,380)
 
 def draw_world(surf): #draws everything for scenery
     surf.fill(SKY_COLOR) #fills sky background
@@ -19,7 +20,7 @@ def draw_world(surf): #draws everything for scenery
     textRectObj.center = (250, 25) #text box center
     
     DISPLAYSURF.blit(textSurfaceObj, textRectObj) #puts text to screen
-    
+
 while True: # main game loop
     draw_world(DISPLAYSURF)
     for event in pygame.event.get():
@@ -32,6 +33,6 @@ while True: # main game loop
         if event.type == QUIT:
           pygame.quit()
           sys.exit()
-   # my_launcher.draw(DISPLAYSURF)
+    myLauncher.draw(DISPLAYSURF)
     pygame.display.update()
   #  fpsClock.tick(FPS)
