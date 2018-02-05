@@ -19,13 +19,13 @@ class Launcher:
         # angle = 45 deg
 
     def changeMagnitude(self, delta):
-        if self.magnitude <= MAX_MAG and self.magnitude >= MIN_MAG:
+        if abs(self.magnitude) <= MAX_MAG and abs(self.magnitude) >= MIN_MAG:
             self.magnitude += delta
             # adjust the magnitude
             # within MIN / MAX bounds
 
     def changeAngle(self, delta):
-        if self.angle <= MAX_ANGLE and self.angle >= MIN_ANGLE:
+        if abs(self.angle) <= MAX_ANGLE and abs(self.angle) >= MIN_ANGLE:
             self.angle += delta
             # adjust the angle
             # within MIN / MAX bounds

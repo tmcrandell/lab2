@@ -22,17 +22,25 @@ def draw_world(surf): #draws everything for scenery
     DISPLAYSURF.blit(textSurfaceObj, textRectObj) #puts text to screen
 
 while True: # main game loop
+    FPS=30
     draw_world(DISPLAYSURF)
     for event in pygame.event.get():
         if event.type == pygame.KEYDOWN:
-            if event.key==pygame.K_UP:
-                #launcher change, yada yada yada
-                print "Up"
-           # elif event.key==pygame.K_DOWN:
-                ##...
+            if event.key==pygame.K_DOWN:
+                delta=3
+                myLauncher.changeAngle(delta)
+            elif event.key==pygame.K_UP:
+                delta=-3
+                myLauncher.changeAngle(delta)
+            elif event.key==pygame.K_LEFT:
+                delta=-2
+                myLauncher.changeMagnitude(delta)
+            elif event.key==pygame.K_RIGHT:
+                delta=2
+                myLauncher.changeMagnitude(delta)
         if event.type == QUIT:
           pygame.quit()
           sys.exit()
     myLauncher.draw(DISPLAYSURF)
     pygame.display.update()
-  #  fpsClock.tick(FPS)
+    #fpsClock.tick(FPS)
