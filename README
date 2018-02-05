@@ -1,7 +1,8 @@
-<<<<<<< HEAD
 LAB 2: Andrew Maus and Michael Crandell
 06FEB18
----------------------------------------
-=======
-Initial file for lab2
->>>>>>> ee1ef7c19ee96b5778830bdcec447233d12867bf
+
+--------------------------------------------------------------------
+
+This lab creates the scenery (sky and ground) for a launcher, and draws the actual launcher. If the up/down arrows are pressed, the launcher will change its angle accordingly. If the left/right keys are  pressed, the magnitude will increase or decrease.
+
+Eventually we will launch projectiles from the launcher, and it will account for gravity.
